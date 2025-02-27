@@ -1,0 +1,208 @@
+*,html {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('asset/IrF.gif');
+    background-size: cover;
+    color: #e1e1f1;
+    font-family: "Outfit", sans-serif;
+    padding-top: 4rem;
+    overflow-x: hidden;
+}
+
+.bg-text-animation {
+    position: absolute;
+    font-size: 12rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    opacity: 20%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: -1;
+    user-select: none;
+}
+
+.profile {
+    width: 7rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 2rem;
+    border: solid #8787a3;
+}
+
+h1 {
+    font-size: 1.25rem;
+}
+
+p, .links-icon {
+    margin-top: 1rem;
+}
+
+.links-icon i {
+    font-size: 1.5rem;
+}
+
+.links-icon i:hover {
+    color: #e1e1f1;
+}
+
+.links-icon a {
+    text-decoration: none;
+    color: #8787A3;
+}
+
+.links-icon a:not(:last-child){
+    margin-right: 0.8rem;
+}
+
+ul {
+    width: 80%;
+    max-width: 40rem;
+}
+
+ul li {
+    list-style: none;
+}
+
+.link-card {
+    display: flex;
+    background-color: #2d2d56;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding: 1rem;
+    border-radius: 20px;
+    border: 2px solid #2d2d56;
+    box-shadow: 8px 10px 20px black;
+    cursor: pointer;
+}
+
+.link-card:hover {
+    border: 2px solid white;
+}
+
+.icon,a {
+    text-decoration: none;
+    color: #e1e1f1;
+}
+
+.link-text {
+    font-size: 18px;
+}
+
+.link-action {
+    color: #8787a3;
+    padding: 10px;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #8787a3;
+    font-size: 0.65rem;
+}
+
+.copyright img {
+    margin-top: 4rem;
+    width: 6.5rem;
+    margin-bottom: -40px;
+    opacity: 0.4;
+}
+
+#toast {
+    width: max-content;
+    position: fixed;
+    top: 0;
+}
+
+.toast-container {
+    background-color: white;
+    color: #2d2d56;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 1rem;
+    animation: muncul 300ms ease-in-out;
+}
+
+.toast-gone {
+    animation: hilang 1s ease-in-out 1s;
+}
+
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hilang {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* ========================================= */
+/* MEDIA QUERY UNTUK RESPONSIVE (MOBILE)    */
+/* ========================================= */
+@media (max-width: 600px) {
+    body {
+        padding-top: 2rem; /* Kurangi padding atas agar pas di layar kecil */
+    }
+
+    .bg-text-animation {
+        padding-top: 2rem;
+        font-size: 4rem; /* Kecilkan agar tidak memenuhi layar */
+    }
+
+    .profile {
+        width: 5rem; /* Kecilkan ukuran foto profil */
+    }
+
+    h1 {
+        font-size: 1rem; /* Sesuaikan ukuran heading */
+    }
+
+    .links-icon i {
+        font-size: 1.2rem; /* Sesuaikan ikon di layar kecil */
+    }
+
+    .links-icon a:not(:last-child) {
+        margin-right: 0.3rem; /* Kurangi jarak antar ikon */
+    }
+
+    /* List link agar tetap rapi */
+    ul {
+        width: 80%;
+        max-width: 40rem; /* Hilangkan batas max-width untuk layar kecil */
+    }
+
+    /* Kartu link jadi kolom (vertical) agar muat di layar */
+    .link-card {
+        flex-direction: row;
+        text-align: center;
+        padding: 0.75rem;
+    }
+
+    .link-action {
+        padding: 5px;
+    }
+    
+    /* Bisa juga kecilkan margin-top jika terlalu renggang */
+    .link-card {
+        margin-top: 1rem;
+    }
+}
